@@ -1,6 +1,7 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
 import {useQuery, gql} from "@apollo/client";
+import ReactMarkdown from 'react-markdown'
 
 const CAR = gql`
     query GetCar($id: ID!) {
@@ -39,7 +40,7 @@ export default function CarDetails() {
         <div>
             <h2>Car brand: {carData.name}</h2>
             <h4>Concern: {concernData.name}</h4>
-            <p>{carData.description}</p>
+            <ReactMarkdown>{carData.description}</ReactMarkdown>
         </div>
     );
 }
