@@ -4,6 +4,7 @@ import {ApolloProvider, InMemoryCache, ApolloClient} from "@apollo/client";
 import Homepage from "./pages/Homepage";
 import SiteHeader from "./components/SiteHeader";
 import CarDetails from "./pages/CarDetails";
+import Concern from "./pages/Concern";
 
 // apollo client
 const client = new ApolloClient({
@@ -20,6 +21,7 @@ function App() {
                     <Routes>
                         <Route exact path='/' element={<Homepage/>}/>
                         <Route path='/cars/:id' element={<CarDetails/>}/>
+                        <Route path='/concern/:id' element={<Concern/>}/>
                     </Routes>
                 </div>
             </ApolloProvider>

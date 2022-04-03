@@ -17,7 +17,7 @@ const CAR = gql`
                             }
                         }
                     }
-                }    
+                }
             }
         }
     }
@@ -25,7 +25,7 @@ const CAR = gql`
 
 export default function CarDetails() {
     const {id} = useParams()
-    const {loading,error,data} = useQuery(CAR, {
+    const {loading, error, data} = useQuery(CAR, {
         variables: {id: id}
     })
 
@@ -35,12 +35,10 @@ export default function CarDetails() {
     let carData = data.car.data.attributes;
     let concernData = carData.concern.data.attributes;
 
-    console.log(data)
-
     return (
         <div>
-            <h2>Марка: {carData.name}</h2>
-            <h4>Производитель: {concernData.name}</h4>
+            <h2>Car brand: {carData.name}</h2>
+            <h4>Concern: {concernData.name}</h4>
             <p>{carData.description}</p>
         </div>
     );
